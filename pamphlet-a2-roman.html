@@ -70,8 +70,9 @@
     .cta-text .cta-roman { direction: ltr; text-align: left; font-family: var(--lat); font-weight: 800; font-size: 11mm; line-height: 1.3; color: var(--lime); margin-top: 3mm; white-space: nowrap; }
     .wa { direction: ltr; display: flex; align-items: center; gap: 4mm; font-family: var(--lat); font-weight: 800; font-size: 13mm; line-height: 1.2; color: var(--forest); background: var(--lime); border-radius: 6mm; padding: 4mm 8mm 4mm 6mm; white-space: nowrap; }
     .wa-ic { width: 13mm; height: 13mm; flex-shrink: 0; }
-    .qr { width: 52mm; height: 52mm; border-radius: 5mm; background: #fff; padding: 2.5mm; flex-shrink: 0; }
-    .qr img { width: 100%; height: 100%; display: block; }
+    .reel { position: relative; flex-shrink: 0; width: 58mm; height: 58mm; align-self: flex-end; margin-bottom: 5mm; }
+    .reel-label { position: absolute; bottom: calc(100% + 1mm); right: -4mm; white-space: nowrap; background: var(--sun); color: var(--forest); border-radius: 99mm; box-shadow: 0 2mm 5mm rgba(0,0,0,0.3); z-index: 6; font-family: var(--lat); font-size: 7mm; line-height: 1.3; font-weight: 800; padding: 2.5mm 7mm; }
+    .reel img { width: 100%; height: 100%; border-radius: 5mm; display: block; background: #000; }
     .pay { position: absolute; bottom: 17mm; right: 24mm; left: 24mm; height: 17mm; direction: ltr; display: flex; align-items: center; justify-content: center; gap: 4mm; font-family: var(--lat); font-weight: 800; font-size: 8.5mm; letter-spacing: 0.02em; color: var(--forest); }
     .pay span { background: var(--sun); border-radius: 99mm; padding: 2mm 8mm; }
     .pay b { color: var(--forest); margin-left: 2mm; font-weight: 800; }
@@ -118,7 +119,7 @@
         <p class="cta-roman">Abhi WhatsApp pe book karein</p>
       </div>
       <div class="wa"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.9a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.5-6c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.6 6.6 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.2-.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c.6.3 1.1.4 1.5.5a3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span>0313 1238315</span></div>
-      <div class="qr"><img src="img/qr.svg" alt="WhatsApp QR code"></div>
+      <div class="reel"><div class="reel-label">Scan karein, doodh ka process dekhein ↓</div><img src="img/reel-qr.png" alt="Instagram reel QR code"></div>
     </div>
     <div class="pay"><span>Bank transfer</span><span>Easypaisa</span><span>JazzCash</span><span>Cash</span><b>available</b></div>
     <div class="foot"><span>Taaza doodh hai, peene se pehle ubaal lein.</span><span>Na deposit, na contract</span></div>
