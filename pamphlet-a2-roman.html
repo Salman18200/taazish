@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ur-Latn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>FrescoMilk A2 Pamphlet (Roman Urdu)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap">
+  <style>
+    /* A2 portrait: 420 x 594 mm. Everything is sized in millimetres so it prints at true size. */
+    @page { size: 420mm 594mm; margin: 0; }
+    :root {
+      --forest: #0E1A13; --green: #1E5A3F; --lime: #C8F169; --sun: #F4C542; --cream: #F2F0E8; --ink: #111814; --sec: #5F6A64;
+      --ur: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif;
+      --lat: 'Figtree', 'Segoe UI', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 420mm; height: 594mm; background: var(--cream); }
+    body { font-family: var(--lat); color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sheet { position: relative; width: 420mm; height: 594mm; overflow: hidden; background: var(--cream); }
+
+    /* ---- dark top ---- */
+    .top { position: absolute; inset: 0 0 auto 0; height: 366mm; background: var(--forest); color: var(--cream); overflow: hidden; }
+    .top::after { content: ""; position: absolute; left: -60mm; bottom: -150mm; width: 300mm; height: 300mm; border-radius: 50%; background: radial-gradient(closest-side, rgba(200,241,105,0.16), rgba(200,241,105,0)); }
+    .head { position: absolute; top: 20mm; right: 24mm; left: 24mm; display: flex; align-items: center; justify-content: flex-end; }
+    .brand { display: flex; align-items: center; gap: 5mm; }
+    .mark { width: 19mm; height: 19mm; border-radius: 6mm; background: var(--green); display: flex; align-items: center; justify-content: center; }
+    .mark svg { width: 15mm; height: 15mm; }
+    .brand-name { font-family: var(--lat); font-size: 15mm; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; direction: ltr; }
+    .brand-name span { color: var(--lime); }
+    .area { font-size: 8mm; line-height: 1.3; font-weight: 800; padding-block: 3mm; color: var(--forest); background: var(--lime); border-radius: 99mm; padding: 0 9mm; }
+
+    .hook { position: absolute; top: 52mm; left: 24mm; width: 372mm; }
+    .hook-q { font-size: 34mm; font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; white-space: nowrap; }
+    
+    .hook-a { position: absolute; top: 140mm; left: 24mm; font-size: 45mm; font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: var(--lime); white-space: nowrap; }
+    .hook-sub { position: absolute; top: 196mm; left: 24mm; width: 300mm; font-size: 18mm; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+    .hook-sub b { color: var(--lime); }
+    .hook-sub small { display: block; margin-top: 3mm; font-size: 10mm; font-weight: 700; color: var(--lime); letter-spacing: 0; white-space: nowrap; }
+    .hook-sub b { color: var(--lime); font-weight: 700; }
+
+    .sorry { position: absolute; top: 258mm; left: 24mm; transform: rotate(-7deg); background: var(--cream); color: var(--ink); font-size: 8mm; line-height: 2; padding: 1mm 8mm 2mm; border-radius: 3mm; box-shadow: 0 2mm 5mm rgba(0,0,0,0.35); z-index: 5; }
+    .sorry::before { content: ""; position: absolute; top: -3.5mm; left: 50%; width: 22mm; height: 7mm; transform: translateX(-50%) rotate(3deg); background: rgba(244,197,66,0.85); }
+
+    /* ---- photo + price ---- */
+    .photo { position: absolute; right: 28mm; top: 290mm; width: 134mm; height: 168mm; border-radius: 14mm; overflow: hidden; transform: rotate(-3deg); box-shadow: 0 6mm 18mm rgba(14,26,19,0.35); border: 3mm solid var(--cream); z-index: 3; }
+    .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 66% 62%; display: block; }
+    .price { position: absolute; right: 128mm; top: 274mm; width: 92mm; height: 92mm; border-radius: 50%; background: var(--sun); color: var(--forest); display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(-8deg); box-shadow: 0 4mm 10mm rgba(0,0,0,0.3); z-index: 4; }
+    .price small { font-size: 6.2mm; line-height: 1.2; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+    .price strong { font-family: var(--lat); font-size: 38mm; font-weight: 900; line-height: 0.95; letter-spacing: -0.04em; }
+    .price span { font-size: 8mm; line-height: 1.3; font-weight: 800; }
+
+    /* ---- cream bottom ---- */
+    .steps { position: absolute; top: 376mm; left: 24mm; width: 204mm; display: flex; flex-direction: column; gap: 1mm; }
+    .step { display: flex; align-items: center; gap: 6mm; padding: 5mm 0; border-bottom: 0.5mm solid rgba(17,24,20,0.14); }
+    .step:last-child { border-bottom: 0; }
+    .step time { font-family: var(--lat); font-weight: 900; font-size: 17mm; line-height: 1; letter-spacing: -0.03em; color: var(--green); width: 52mm; text-align: left; direction: ltr; flex-shrink: 0; }
+    .step p { font-size: 9.4mm; line-height: 1.3; font-weight: 700; white-space: nowrap; }
+
+    .promise { position: absolute; top: 455mm; right: 24mm; left: 24mm; display: flex; align-items: center; justify-content: space-between; gap: 4mm; }
+    .promise span { flex: 1; text-align: center; font-size: 7.8mm; line-height: 1.3; padding-block: 3mm !important; font-weight: 700; color: var(--forest); border: 0.8mm solid var(--forest); border-radius: 99mm; padding: 0 3mm 1mm; white-space: nowrap; }
+    .promise span.fill { background: var(--forest); color: var(--lime); }
+
+    .cta { position: absolute; bottom: 38mm; right: 24mm; left: 24mm; height: 74mm; border-radius: 12mm; background: var(--green); color: #fff; display: flex; align-items: center; gap: 10mm; padding: 0 12mm; }
+    .cta-text { flex: 1; }
+    .cta-text h2 { font-size: 13mm; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; }
+    .cta-text p { font-size: 7.6mm; line-height: 2.1; color: #DDEBDD; white-space: nowrap; margin-top: 1mm; }
+    .cta-text p b { color: var(--lime); }
+    .cta-text .cta-roman { direction: ltr; text-align: left; font-family: var(--lat); font-weight: 800; font-size: 11mm; line-height: 1.3; color: var(--lime); margin-top: 3mm; white-space: nowrap; }
+    .wa { direction: ltr; display: flex; align-items: center; gap: 4mm; font-family: var(--lat); font-weight: 800; font-size: 13mm; line-height: 1.2; color: var(--forest); background: var(--lime); border-radius: 6mm; padding: 4mm 8mm 4mm 6mm; white-space: nowrap; }
+    .wa-ic { width: 13mm; height: 13mm; flex-shrink: 0; }
+    .qr { width: 52mm; height: 52mm; border-radius: 5mm; background: #fff; padding: 2.5mm; flex-shrink: 0; }
+    .qr img { width: 100%; height: 100%; display: block; }
+    .pay { position: absolute; bottom: 17mm; right: 24mm; left: 24mm; height: 17mm; direction: ltr; display: flex; align-items: center; justify-content: center; gap: 4mm; font-family: var(--lat); font-weight: 800; font-size: 8.5mm; letter-spacing: 0.02em; color: var(--forest); }
+    .pay span { background: var(--sun); border-radius: 99mm; padding: 2mm 8mm; }
+    .pay b { color: var(--forest); margin-left: 2mm; font-weight: 800; }
+    
+    .foot { position: absolute; bottom: 6mm; right: 24mm; left: 24mm; display: flex; justify-content: space-between; font-size: 6.4mm; line-height: 1.3; font-weight: 600; color: var(--sec); }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="top">
+      <div class="head">
+        <div class="area">Gulberg · FB Area, Karachi</div>
+      </div>
+
+      <div class="hook">
+        <div class="hook-q">Milawat wala doodh<br>pee pee kar thak gaye?</div>
+      </div>
+      <div class="hook-a">Ab khalis azmayein.</div>
+      <p class="hook-sub">Hamari dairy se<br><b>seedha aap ke ghar.</b><small>Beech mein koi nahi. Na dukaan, na doodh wala.</small></p>
+    </div>
+
+    <div class="photo"><img src="img/doorstep.png" alt=""></div>
+    <div class="price"><small>Gaaye ka doodh</small><strong>199</strong><span>rupay / litre</span></div>
+
+    <div class="steps">
+      <div class="step"><time>6:00</time><p>Gaaye ka doodh nikala gaya</p></div>
+      <div class="step"><time>7:00</time><p>Pack aur seal kiya gaya</p></div>
+      <div class="step"><time>8 – 10</time><p>Aap ke darwaze par</p></div>
+    </div>
+
+    <div class="promise">
+      <span class="fill">Na pani</span><span class="fill">Na powder</span><span class="fill">Na chemical</span><span>Ek hi farm ka doodh</span>
+    </div>
+
+    <div class="cta">
+      <div class="cta-text">
+        <h2>Aaj raat book karein.<br>Kal subah taaza doodh.</h2>
+        <p class="cta-roman">Abhi WhatsApp pe book karein</p>
+      </div>
+      <div class="wa"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.9a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.5-6c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.6 6.6 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.2-.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c.6.3 1.1.4 1.5.5a3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span>0339 1238315</span></div>
+      <div class="qr"><img src="img/qr.svg" alt="WhatsApp QR code"></div>
+    </div>
+    <div class="pay"><span>Bank transfer</span><span>Easypaisa</span><span>JazzCash</span><span>Cash</span><b>available</b></div>
+    <div class="foot"><span>Taaza doodh hai, peene se pehle ubaal lein.</span><span>Na deposit, na contract</span></div>
+  </div>
+</body>
+</html>
