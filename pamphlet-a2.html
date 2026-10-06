@@ -52,7 +52,10 @@
     .steps { position: absolute; top: 376mm; right: 24mm; width: 204mm; display: flex; flex-direction: column; gap: 1mm; }
     .step { display: flex; align-items: center; gap: 6mm; padding: 2mm 0; border-bottom: 0.5mm solid rgba(17,24,20,0.14); }
     .step:last-child { border-bottom: 0; }
-    .step time { font-family: var(--lat); font-weight: 900; font-size: 17mm; line-height: 1; letter-spacing: -0.03em; color: var(--green); width: 52mm; text-align: left; direction: ltr; flex-shrink: 0; }
+    .step time { font-family: var(--lat); font-weight: 900; font-size: 17mm; line-height: 1; letter-spacing: -0.03em; color: var(--green); width: 74mm; text-align: left; direction: ltr; flex-shrink: 0; white-space: nowrap; }
+    .step time { display: flex; align-items: baseline; justify-content: flex-start; direction: ltr; unicode-bidi: isolate; }
+    .step time span { direction: ltr; unicode-bidi: isolate; }
+    .step time small { font-family: var(--ur); font-size: 8mm; font-weight: 700; letter-spacing: 0; line-height: 1; margin-left: 2mm; }
     .step p { font-size: 9.6mm; line-height: 2.1; font-weight: 600; white-space: nowrap; }
 
     .promise { position: absolute; top: 451mm; right: 24mm; left: 24mm; display: flex; align-items: center; justify-content: space-between; gap: 4mm; }
@@ -100,9 +103,9 @@
     <div class="offer"><div class="o-tag">آفر صرف ایک مہینے کے لیے</div><div class="o-main"><b>40</b> سلاٹس اوپن</div></div>
 
     <div class="steps">
-      <div class="step"><time>6:00</time><p>گائے کا دودھ نکالا گیا</p></div>
-      <div class="step"><time>7:00</time><p>پیک اور سیل کیا گیا</p></div>
-      <div class="step"><time>8 – 10</time><p>آپ کے دروازے پر</p></div>
+      <div class="step"><time><span>6:00</span><small>صبح</small></time><p>گائے کا دودھ نکالا گیا</p></div>
+      <div class="step"><time><span>7:00</span><small>صبح</small></time><p>پیک اور سیل کیا گیا</p></div>
+      <div class="step"><time><span>8 – 10</span><small>صبح</small></time><p>آپ کے دروازے پر</p></div>
     </div>
 
     <div class="promise">
